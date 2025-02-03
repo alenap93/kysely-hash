@@ -1,0 +1,74 @@
+{
+  "name": "kysely-hash",
+  "version": "1.0.0",
+  "description": "Hash plugin for kysely",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alenap93/kysely-hash.git"
+  },
+  "author": "Alessio Napolitano @alenap93",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "hash",
+    "kysely",
+    "database",
+    "sql",
+    "query-builder"
+  ],
+  "bugs": {
+    "url": "https://github.com/alenap93/kysely-hash/issues"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "prettier": "prettier --check src/**/*.ts test/**/*.ts scripts/**/*.js",
+    "prettier:fix": "prettier --write src/**/*.ts test/**/*.ts scripts/**/*.js",
+    "test": "npm run test:node",
+    "test:node": "vitest run --dir ./test/node",
+    "test:deno": "cd test/deno && deno install && deno run test",
+    "test:bun": "cd test/bun && bun install && bun run test",
+    "coverage": "vitest run --dir ./test/node --coverage --coverage.include=**/*.ts --coverage.exclude=**/index.ts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean && npm run script:add-deno-type-references",
+    "script:add-deno-type-references": "node scripts/add-deno-type-references.js"
+  },
+  "devDependencies": {
+    "@fastify/pre-commit": "^2.2.0",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^22.12.0",
+    "@vitest/coverage-v8": "^3.0.4",
+    "better-sqlite3": "^11.8.1",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "kysely": "^0.27.5"
+  },
+  "files": [
+    "./dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "pre-commit": [
+    "prettier",
+    "test"
+  ]
+}
