@@ -2,7 +2,7 @@ import { Generated, Kysely } from 'npm:kysely'
 import { DB as Sqlite } from 'https://deno.land/x/sqlite/mod.ts'
 import { DenoSqliteDialect } from 'jsr:@soapbox/kysely-deno-sqlite'
 
-import { KyselyHashPlugin } from '../../dist/index.d.mts'
+import { KyselyHashPlugin } from '../../dist/index.mjs'
 import { assertEquals, assertRejects } from '@std/assert'
 import {
   beforeEach,
