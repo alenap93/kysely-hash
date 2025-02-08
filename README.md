@@ -5,7 +5,7 @@
 
   
 
-[![CI](https://github.com/alenap93/kysely-hash/actions/workflows/ci.yml/badge.svg)](https://github.com/alenap93/kysely-hash/actions/workflows/ci.yml)
+[![CI](https://github.com/alenap93/kysely-hash/actions/workflows/test.yml/badge.svg)](https://github.com/alenap93/kysely-hash/actions/workflows/test.yml)
 
 [![NPM version](https://img.shields.io/npm/v/kysely-hash.svg?style=flat)](https://www.npmjs.com/package/kysely-hash)
 
